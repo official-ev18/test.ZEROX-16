@@ -56,7 +56,7 @@
       justify-content: space-between;
       height: 68px;
     }
-    .brand img { height: 30px; width: auto; }
+    .brand img { height: 46px; width: auto; }
     nav ul { display: flex; gap: 28px; list-style: none; }
     nav a { font-size: .9rem; color: var(--muted); transition: color .2s; }
     nav a:hover { color: var(--text); }
@@ -268,24 +268,6 @@
       border: 1px solid var(--border);
     }
 
-    .creator { display: grid; grid-template-columns: 320px 1fr; gap: 56px; align-items: center; }
-    .creator img {
-      width: 100%;
-      aspect-ratio: 4 / 5;
-      object-fit: cover;
-      border: 1px solid var(--border);
-      filter: grayscale(.6);
-    }
-    .creator h3 {
-      font-family: var(--font-display);
-      font-weight: 400;
-      font-size: 3rem;
-      text-transform: uppercase;
-      letter-spacing: .02em;
-      margin: 10px 0 14px;
-    }
-    .creator p { color: var(--muted); margin-bottom: 26px; max-width: 540px; }
-
     .contact-row { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid var(--border); }
     .contact-row a {
       display: flex;
@@ -404,7 +386,7 @@
       .feature { grid-template-columns: 1fr; }
       .feature-media { min-height: 300px; border-right: 0; border-bottom: 1px solid var(--border); }
       .cards { grid-template-columns: 1fr 1fr; }
-      .about-grid, .creator, .about-game { grid-template-columns: 1fr; gap: 40px; }
+      .about-grid, .about-game { grid-template-columns: 1fr; gap: 40px; }
       .features { grid-template-columns: 1fr; }
       .contact-row { grid-template-columns: 1fr; }
       .contact-row a { border-right: 0; border-bottom: 1px solid var(--border); }
@@ -424,6 +406,24 @@
       .game-hero-inner { padding: 40px 24px; }
       .cta { padding: 28px; }
     }
+
+    /* Motion: subtle fades only */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .hero .label   { animation: fadeUp .7s ease both; }
+    .hero h1       { animation: fadeUp .8s .1s ease both; }
+    .hero p        { animation: fadeUp .8s .2s ease both; }
+    .hero .actions { animation: fadeUp .8s .3s ease both; }
+
+    .reveal { opacity: 0; transition: opacity .7s ease; }
+    .reveal.in { opacity: 1; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .hero .label, .hero h1, .hero p, .hero .actions { animation: none; }
+      .reveal { opacity: 1; transition: none; }
+    }
   </style>
 </head>
 <body>
@@ -436,7 +436,6 @@
           <li><a href="#games">Games</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#silentgears">Gallery</a></li>
-          <li><a href="#creator">Creator</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
@@ -488,33 +487,6 @@
               </div>
             </div>
           </article>
-
-          <div class="cards">
-            <article class="card">
-              <div class="card-thumb has-img"></div>
-              <div class="card-body">
-                <h4>Project Two</h4>
-                <p>A short interactive experience built around non-linear mechanics and a minimal visual style.</p>
-                <span class="tag">In development · PC, Mobile</span>
-              </div>
-            </article>
-            <article class="card">
-              <div class="card-thumb">THREE</div>
-              <div class="card-body">
-                <h4>Project Three</h4>
-                <p>Still in the concept stage. Details will be shared when the project is ready.</p>
-                <span class="tag">Concept · TBA</span>
-              </div>
-            </article>
-            <article class="card">
-              <div class="card-thumb">NEXT</div>
-              <div class="card-body">
-                <h4>Next Project</h4>
-                <p>Something new is being prototyped. Follow the studio to be the first to know.</p>
-                <span class="tag">Prototype · TBA</span>
-              </div>
-            </article>
-          </div>
         </div>
       </section>
 
@@ -539,22 +511,6 @@
             <div class="value">
               <span class="num">03</span>
               <div><h5>Independent craft</h5><p>Creative freedom with careful attention to detail and to our players.</p></div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="creator">
-        <div class="wrap creator">
-          <img src="https://cdn.imgurl.ir/uploads/y39152_Negar_1791034551022.jpg" alt="Mohamad Hossein, creator of this website">
-          <div>
-            <span class="label">Website by</span>
-            <h3>Mohamad Hossein</h3>
-            <p>Designed and built this website. Follow the creator's work on YouTube, Instagram and Telegram.</p>
-            <div class="actions">
-              <a href="https://www.youtube.com/@mohamad_hossein_ev18" target="_blank" rel="noopener" class="btn btn-outline"><i class="fa-brands fa-youtube"></i> YouTube</a>
-              <a href="https://www.instagram.com/mohamad_hossein_ev18" target="_blank" rel="noopener" class="btn btn-outline"><i class="fa-brands fa-instagram"></i> Instagram</a>
-              <a href="https://t.me/MOHAMAD_HOSSEIN_EV188" target="_blank" rel="noopener" class="btn btn-outline"><i class="fa-brands fa-telegram"></i> Telegram</a>
             </div>
           </div>
         </div>
@@ -673,7 +629,7 @@
 
   <footer>
     <div class="wrap footer-inner">
-      <span>© <span id="year"></span> The Zerox Game Studios</span>
+      <span>Copyright © <span id="year"></span> Zerox Game Studios. All rights reserved.</span>
       <div class="footer-social">
         <a href="https://t.me/ZEROX_GAME_STUDIOS" target="_blank" rel="noopener" aria-label="Telegram"><i class="fa-brands fa-telegram"></i></a>
         <a href="https://www.youtube.com/@Zerox_game_studios" target="_blank" rel="noopener" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
@@ -709,6 +665,19 @@
           window.scrollTo({ top: 0, behavior: 'instant' });
         }
       }
+    }
+
+    const revealTargets = document.querySelectorAll('.card, .value, .feature, .feature-card, .contact-row a, .gallery img, .cta');
+    revealTargets.forEach(el => el.classList.add('reveal'));
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+        });
+      }, { threshold: 0.15 });
+      revealTargets.forEach(el => io.observe(el));
+    } else {
+      revealTargets.forEach(el => el.classList.add('in'));
     }
 
     window.addEventListener('hashchange', route);

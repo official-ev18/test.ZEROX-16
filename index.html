@@ -1,420 +1,327 @@
-<!doctype html>
-<html lang="fa" dir="rtl">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>گروه سرود مفضال</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The Zerox Game Studios</title>
+<link rel="icon" href="https://cdn.imgurl.ir/uploads/b18142_Negar_1789379626960.png">
+<link rel="apple-touch-icon" href="https://cdn.imgurl.ir/uploads/b18142_Negar_1789379626960.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@400..700&family=IBM+Plex+Sans+Arabic:wght@300..700&display=swap" rel="stylesheet">
-<meta name="description" content="گروه سرود مفضال بیرجند - سرودها، نماهنگ‌ها و گزارش‌های تصویری">
+<link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;500;600&family=Chakra+Petch:wght@400;500;600;700&family=Bebas+Neue&display=swap" rel="stylesheet">
 <style>
-:root {
-  --bg: #F3F9EA;
-  --surface: #FFFFFF;
-  --surface-2: #E4F1CF;
-  --line: #CFE4B2;
-  --text: #17240F;
-  --muted: #5A6B47;
-  --pista: #6E9E3A;
-  --pista-deep: #4F7D25;
-  --ember: #D9485F;
-}
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body {
-  margin: 0; background: var(--bg); color: var(--text);
-  font-family: "IBM Plex Sans Arabic", Tahoma, sans-serif; font-weight: 400; font-size: 17px; line-height: 1.95;
-  overflow-x: hidden;
-}
-img { max-width: 100%; display: block; }
-a { color: inherit; }
-button { font: inherit; cursor: pointer; }
-.wrap { width: min(1160px, calc(100% - 40px)); margin-inline: auto; }
+  :root {
+    --ink: #0b0d10; --s1: #3b3e42; --s2: #1c2026; --s3: #0f1216;
+    --line: rgba(255,255,255,.14); --text: #fff; --muted: #9ea5af;
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  [hidden] { display: none !important; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0; color: var(--text); min-height: 100vh; overflow-x: hidden;
+    font-family: "Exo 2", system-ui, sans-serif; font-weight: 400; line-height: 1.65;
+    background: radial-gradient(900px 700px at 90% -10%, rgba(255,255,255,.08), transparent 60%), linear-gradient(180deg, var(--s1), var(--s2) 40%, var(--s3));
+    background-attachment: fixed;
+  }
+  /* vertical hairlines like a blueprint */
+  body::before { content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 0; background: repeating-linear-gradient(90deg, transparent 0 calc(16.66vw - 1px), var(--line) calc(16.66vw - 1px) 16.66vw); opacity: .35; }
+  header, main, footer { position: relative; z-index: 1; }
 
-/* top nav */
-.bar {
-  position: fixed; inset: 0 0 auto 0; z-index: 50; background: rgba(243,249,234,.88);
-  backdrop-filter: blur(10px); border-bottom: 1px solid var(--line);
-}
-.bar .wrap { display: flex; align-items: center; justify-content: space-between; gap: 14px; flex-wrap: wrap; padding: 12px 0; }
-.logo { text-decoration: none; color: var(--pista-deep); font-size: 24px; }
-.menu { display: flex; gap: 4px; flex-wrap: wrap; }
-.menu a {
-  text-decoration: none; color: var(--muted); font-size: 14px; padding: 6px 12px; border-radius: 999px; transition: .2s;
-}
-.menu a:hover { color: var(--text); background: var(--surface-2); }
-.menu a.on { color: #FFFFFF; background: var(--pista); }
+  .logo { font-family: "Bebas Neue", sans-serif; font-weight: 400; letter-spacing: 3px; line-height: .9; margin: 0; }
+  .label { font-family: "Chakra Petch", sans-serif; font-weight: 500; font-size: .74rem; letter-spacing: 4px; text-transform: uppercase; color: var(--muted); margin: 0 0 22px; display: flex; gap: 12px; align-items: center; }
+  .label::before { content: ""; width: 28px; height: 1px; background: var(--text); }
+  .title { font-family: "Chakra Petch", sans-serif; font-weight: 700; text-transform: uppercase; line-height: .95; letter-spacing: 1px; margin: 0; font-size: clamp(3rem, 8vw, 6.4rem); }
+  .outline { color: transparent; -webkit-text-stroke: 1px rgba(255,255,255,.55); }
+  .lead { color: var(--muted); font-size: 1.1rem; max-width: 520px; margin: 0; }
+  .body { color: var(--muted); font-size: 1.05rem; margin: 0 0 18px; max-width: 560px; }
+  .page { padding: 180px 6vw 110px; min-height: 100vh; }
+  .section { padding: 120px 6vw; border-top: 1px solid var(--line); }
+  .btn { display: inline-flex; align-items: center; gap: 14px; font-family: "Chakra Petch", sans-serif; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; font-size: .82rem; padding: 16px 26px; color: var(--text); text-decoration: none; border: 1px solid var(--text); background: transparent; cursor: pointer; transition: .25s; }
+  .btn span { transition: transform .25s; }
+  .btn:hover { background: var(--text); color: var(--ink); }
+  .btn:hover span { transform: translateX(5px); }
+  .btn.solid { background: var(--text); color: var(--ink); }
+  .btn.solid:hover { background: transparent; color: var(--text); }
+  .btns { display: flex; gap: 14px; flex-wrap: wrap; }
 
-/* hero */
-.hero { overflow: hidden; min-height: 100vh; display: grid; align-content: center; padding: 120px 0 80px; position: relative; }
-.hero::before {
-  content: ""; position: absolute; width: 60vmin; height: 60vmin; border-radius: 50%;
-  left: -15vmin; top: 10%; background: radial-gradient(circle, rgba(141,187,78,.35), transparent 70%);
-  filter: blur(20px);
-}
-.kicker { color: var(--pista-deep); font-size: 15px; letter-spacing: 0; margin: 0 0 14px; }
-h1, h2, h3, .logo, .kicker, .num { font-family: "Reem Kufi", "IBM Plex Sans Arabic", sans-serif; font-weight: 600; }
-.hero h1 {
-  margin: 0; font-size: clamp(74px, 19vw, 230px); line-height: 1.1; font-weight: 600;
-  color: var(--text); position: relative;
-}
-.hero h1 span { color: transparent; -webkit-text-stroke: 1.5px var(--pista-deep); }
-.hero h1 { letter-spacing: 0; }
-.hero .lead { max-width: 560px; color: var(--muted); font-size: 18px; margin: 26px 0 34px; }
-.cta { display: flex; gap: 12px; flex-wrap: wrap; }
-.btn {
-  text-decoration: none; padding: 13px 28px; border-radius: 999px; font-size: 15px; transition: transform .15s, background .2s;
-  border: 1px solid var(--pista); color: var(--pista);
-}
-.btn:hover { transform: translateY(-2px); background: var(--pista); color: #FFFFFF; }
-.btn.solid { background: var(--pista); color: #FFFFFF; }
-.btn.solid:hover { background: var(--pista-deep); border-color: var(--pista-deep); }
-.ticker {
-  position: absolute; bottom: 26px; inset-inline: 0; overflow: hidden; white-space: nowrap;
-  color: var(--muted); font-size: 14px; border-top: 1px solid var(--line); padding-top: 12px;
-}
-.ticker span { display: inline-block; animation: slide 28s linear infinite; padding-inline-start: 40px; }
-@keyframes slide { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  /* header */
+  header { position: fixed; top: env(safe-area-inset-top, 0px); left: 0; right: 0; z-index: 20; display: flex; justify-content: space-between; align-items: center; gap: 20px; padding: 20px 6vw; transition: background .35s, border-color .35s; border-bottom: 1px solid transparent; }
+  header.scrolled { background: rgba(11,13,16,.88); backdrop-filter: blur(12px); border-color: var(--line); }
+  .brand { color: var(--text); text-decoration: none; display: flex; align-items: baseline; gap: 12px; }
+  .brand .logo { font-size: 1.8rem; }
+  .brand small { font-family: "Chakra Petch", sans-serif; font-size: .6rem; letter-spacing: 4px; text-transform: uppercase; color: var(--muted); }
+  nav { display: flex; gap: 26px; flex-wrap: wrap; justify-content: flex-end; }
+  nav a { color: var(--muted); text-decoration: none; font-family: "Chakra Petch", sans-serif; font-weight: 500; font-size: .8rem; letter-spacing: 2px; text-transform: uppercase; transition: color .2s; }
+  nav a sup { font-size: .6rem; margin-right: 4px; opacity: .6; }
+  nav a:hover, nav a.active { color: var(--text); }
 
-/* sections */
-section { overflow: hidden; padding: 110px 0; border-top: 1px solid var(--line); }
-.sec-top { display: flex; justify-content: space-between; align-items: end; gap: 20px; flex-wrap: wrap; margin-bottom: 44px; }
-.sec-top .idx { color: var(--pista); font-size: 14px; }
-.sec-top h2 { margin: 6px 0 0; font-size: clamp(40px, 6vw, 72px); line-height: 1.2; font-weight: 600; }
-.sec-top p { margin: 0; color: var(--muted); max-width: 320px; font-size: 15px; }
+  /* home hero */
+  .hero { min-height: 100vh; min-height: 100svh; position: relative; display: flex; flex-direction: column; justify-content: space-between; padding: 150px 6vw 6vh; background: linear-gradient(180deg, rgba(11,13,16,.35), rgba(11,13,16,.7) 65%, var(--ink)), url(https://cdn.imgurl.ir/uploads/x571205_Negar_1788480643884.png) center/cover no-repeat; }
+  .hero .meta { display: flex; justify-content: space-between; font-family: "Chakra Petch", sans-serif; font-size: .72rem; letter-spacing: 3px; text-transform: uppercase; color: var(--muted); }
+  .hero h1 { margin: 0; font-family: "Bebas Neue", sans-serif; font-weight: 400; line-height: .8; letter-spacing: 4px; }
+  .hero h1 .a { display: block; font-size: clamp(7rem, 26vw, 24rem); text-shadow: 0 10px 60px rgba(0,0,0,.6); }
+  .hero h1 .b { display: block; font-size: clamp(3rem, 11vw, 9rem); color: transparent; -webkit-text-stroke: 1px rgba(255,255,255,.8); letter-spacing: 6px; }
+  .hero-foot { display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 26px; margin-top: 36px; }
 
-/* chips */
-.chips { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 34px; }
-.chip {
-  background: transparent; color: var(--muted); border: 1px solid var(--line);
-  padding: 6px 18px; border-radius: 999px; font-size: 14px; transition: .2s;
-}
-.chip:hover { color: var(--text); border-color: var(--muted); }
-.chip.on { background: var(--pista-deep); color: #FFFFFF; border-color: var(--pista-deep); }
+  .ticker { overflow: hidden; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: var(--ink); padding: 18px 0; white-space: nowrap; }
+  .ticker-track { display: inline-flex; animation: scroll 32s linear infinite; }
+  .ticker span { font-family: "Chakra Petch", sans-serif; font-weight: 600; font-size: .9rem; letter-spacing: 4px; text-transform: uppercase; color: var(--muted); padding-right: 46px; }
+  .ticker span::after { content: "/"; color: var(--text); margin-left: 46px; }
+  @keyframes scroll { to { transform: translateX(-50%); } }
 
-/* song cards */
-.grid { display: grid; gap: 22px; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
-.card {
-  background: var(--surface); border: 1px solid var(--line); border-radius: 22px; overflow: hidden;
-  display: flex; flex-direction: column; transition: border-color .25s, transform .25s;
-}
-.card:hover { border-color: var(--pista); transform: translateY(-4px); }
-.cover { position: relative; aspect-ratio: 16/11; background: var(--surface-2); overflow: hidden; }
-.cover img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s; }
-.card:hover .cover img { transform: scale(1.05); }
-.pill {
-  position: absolute; top: 14px; right: 14px; background: var(--ember); color: #fff;
-  font-size: 12px; padding: 3px 12px; border-radius: 999px;
-}
-.cat {
-  position: absolute; bottom: 14px; left: 14px; background: rgba(255,255,255,.85); color: var(--pista-deep);
-  font-size: 12px; padding: 3px 12px; border-radius: 999px; backdrop-filter: blur(6px);
-}
-.body { padding: 22px 24px 26px; display: flex; flex-direction: column; gap: 14px; flex: 1; }
-.body h3 { margin: 0; font-size: 26px; font-weight: 600; }
-audio { width: 100%; height: 40px; accent-color: var(--pista); }
-.credits { list-style: none; margin: 0; padding: 0; font-size: 14px; color: var(--muted); }
-.credits li { padding: 5px 0; border-bottom: 1px solid var(--line); }
-.credits b { color: var(--text); font-weight: 600; margin-inline-end: 6px; }
-.note { margin: 0; font-size: 13px; color: var(--muted); border-inline-start: 2px solid var(--pista); padding-inline-start: 12px; }
+  /* home featured */
+  .featured { display: grid; grid-template-columns: 1.1fr 1fr; gap: 6vw; align-items: center; }
+  .featured img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; display: block; border: 1px solid var(--line); filter: contrast(1.05); }
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .stats div { padding: 40px 24px; border-right: 1px solid var(--line); }
+  .stats div:last-child { border-right: 0; }
+  .stats b { display: block; font-family: "Bebas Neue", sans-serif; font-weight: 400; font-size: 4.6rem; line-height: .9; }
+  .stats span { color: var(--muted); font-size: .72rem; letter-spacing: 2px; text-transform: uppercase; font-family: "Chakra Petch", sans-serif; }
 
-/* popular: numbered list */
-.popular-list { border-top: 1px solid var(--line); }
-.p-row {
-  display: grid; grid-template-columns: 90px 1fr auto; gap: 20px; align-items: center;
-  padding: 26px 0; border-bottom: 1px solid var(--line);
-}
-.p-row .num { font-size: 56px; color: var(--surface-2); -webkit-text-stroke: 1px var(--pista-deep); line-height: 1; }
-.p-row h3 { margin: 0 0 4px; font-size: 28px; font-weight: 600; }
-.p-row .sm { color: var(--muted); font-size: 14px; margin: 0; }
-.p-row audio { width: 260px; }
-@media (max-width: 760px) { .p-row { grid-template-columns: 1fr; } .p-row audio { width: 100%; } .p-row .num { font-size: 40px; } }
+  /* services index */
+  .idx { border-top: 1px solid var(--line); }
+  .idx-row { display: grid; grid-template-columns: 120px 1.2fr 1fr; gap: 30px; align-items: center; padding: 42px 0; border-bottom: 1px solid var(--line); transition: background .35s, padding .35s; }
+  .idx-row:hover { background: rgba(255,255,255,.05); padding-left: 20px; padding-right: 20px; }
+  .idx-row .n { font-family: "Bebas Neue", sans-serif; font-size: 4.4rem; line-height: 1; color: transparent; -webkit-text-stroke: 1px rgba(255,255,255,.5); }
+  .idx-row h3 { font-family: "Chakra Petch", sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; font-size: 2rem; margin: 0; }
+  .idx-row p { color: var(--muted); margin: 0; }
 
-/* video */
-.video-box { display: grid; grid-template-columns: 1.5fr 1fr; gap: 36px; align-items: center; }
-.video-box video { width: 100%; border-radius: 22px; background: #000; border: 1px solid var(--line); aspect-ratio: 16/9; }
-.video-box h3 { font-size: 36px; margin: 0 0 14px; font-weight: 600; }
-@media (max-width: 860px) { .video-box { grid-template-columns: 1fr; } }
+  /* games */
+  .hero-game { position: relative; border: 1px solid var(--line); overflow: hidden; }
+  .hero-game img { width: 100%; aspect-ratio: 21 / 9; object-fit: cover; display: block; transition: transform 1.4s; }
+  .hero-game:hover img { transform: scale(1.03); }
+  .hero-game .over { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: space-between; padding: 30px; background: linear-gradient(180deg, transparent 40%, rgba(11,13,16,.92)); }
+  .hero-game .over .tag { align-self: flex-start; }
+  .hero-game h2 { margin: 0; font-family: "Bebas Neue", sans-serif; font-weight: 400; font-size: clamp(4rem, 14vw, 11rem); line-height: .85; letter-spacing: 4px; }
+  .tag { font-family: "Chakra Petch", sans-serif; font-size: .7rem; letter-spacing: 3px; text-transform: uppercase; border: 1px solid var(--line); padding: 6px 12px; color: var(--muted); }
+  .shots { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 16px 0 100px; }
+  .shots figure { margin: 0; }
+  .shots img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; display: block; border: 1px solid var(--line); }
+  .shots figcaption { font-family: "Chakra Petch", sans-serif; font-size: .72rem; letter-spacing: 3px; color: var(--muted); text-transform: uppercase; margin-top: 10px; }
+  .list { border-top: 1px solid var(--line); }
+  .list div { display: flex; justify-content: space-between; align-items: center; gap: 20px; padding: 30px 0; border-bottom: 1px solid var(--line); }
+  .list h4 { margin: 0; font-family: "Bebas Neue", sans-serif; font-weight: 400; font-size: 3.6rem; letter-spacing: 3px; line-height: 1; }
 
-/* gallery */
-.post-head { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 22px; }
-.post-head h3 { margin: 0; font-size: 26px; font-weight: 600; color: var(--pista); }
-.post-head p { margin: 0; color: var(--muted); font-size: 14px; }
-.shots { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 12px; }
-.shot {
-  border: 0; padding: 0; background: var(--surface); aspect-ratio: 4/5; border-radius: 16px; overflow: hidden;
-}
-.shot img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s, filter .5s; }
-.shot:hover img { transform: scale(1.06); }
+  /* about */
+  .about { display: grid; grid-template-columns: 1fr 1.1fr; gap: 6vw; align-items: start; }
+  .about img { width: 100%; max-width: 420px; display: block; border: 1px solid var(--line); filter: grayscale(.25); }
+  .about .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 0; margin-top: 50px; border-top: 1px solid var(--line); }
+  .about .cols div { padding: 28px 0; border-bottom: 1px solid var(--line); }
+  .about .cols div:nth-child(odd) { padding-right: 20px; border-right: 1px solid var(--line); }
+  .about .cols div:nth-child(even) { padding-left: 24px; }
+  .about .cols b { display: block; font-family: "Bebas Neue", sans-serif; font-weight: 400; font-size: 3.4rem; line-height: 1; }
+  .about .cols span { color: var(--muted); font-size: .72rem; letter-spacing: 2px; text-transform: uppercase; font-family: "Chakra Petch", sans-serif; }
 
-/* lightbox */
-dialog.lb { border: 0; padding: 0; background: transparent; max-width: 96vw; max-height: 94vh; }
-dialog.lb::backdrop { background: rgba(20,30,12,.92); }
-dialog.lb img { max-height: 88vh; max-width: 94vw; border-radius: 14px; }
-.x {
-  position: fixed; top: 16px; left: 16px; width: 42px; height: 42px; border-radius: 50%;
-  border: 1px solid var(--line); background: var(--surface); color: var(--text); font-size: 16px;
-}
+  /* contact */
+  .contact { display: grid; grid-template-columns: 1fr 1fr; gap: 6vw; }
+  .contact form { display: grid; gap: 30px; }
+  .contact input, .contact textarea { font: inherit; color: var(--text); background: transparent; border: 0; border-bottom: 1px solid var(--line); padding: 14px 0; width: 100%; transition: border-color .3s; }
+  .contact textarea { min-height: 120px; resize: vertical; }
+  .contact input::placeholder, .contact textarea::placeholder { color: var(--muted); }
+  .contact input:focus, .contact textarea:focus { outline: none; border-color: var(--text); }
+  .contact .btn { justify-self: start; }
+  .links a { display: flex; justify-content: space-between; color: var(--text); text-decoration: none; font-family: "Bebas Neue", sans-serif; font-size: 3rem; letter-spacing: 3px; line-height: 1; padding: 18px 0; border-bottom: 1px solid var(--line); transition: padding .3s; }
+  .links a:hover { padding-left: 14px; }
 
-/* contact */
-.contact { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0; border: 1px solid var(--line); border-radius: 22px; overflow: hidden; }
-.contact a {
-  text-decoration: none; padding: 30px 28px; border-inline-start: 1px solid var(--line); transition: background .2s;
-  display: flex; flex-direction: column; gap: 6px;
-}
-.contact a:first-child { border-inline-start: 0; }
-.contact a:hover { background: var(--surface); }
-.contact small { color: var(--muted); font-size: 14px; }
-.contact strong { font-size: 19px; font-weight: 600; direction: ltr; text-align: right; color: var(--pista); }
+  /* footer */
+  footer { border-top: 1px solid var(--line); padding: 50px 6vw calc(36px + env(safe-area-inset-bottom, 0px)); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 24px; align-items: center; }
+  footer .socials { display: flex; gap: 24px; flex-wrap: wrap; }
+  footer a { color: var(--text); text-decoration: none; font-family: "Chakra Petch", sans-serif; font-weight: 500; font-size: .78rem; letter-spacing: 2px; text-transform: uppercase; }
+  footer a:hover { text-decoration: underline; text-underline-offset: 6px; }
+  footer .small { color: var(--muted); font-size: .85rem; width: 100%; margin: 0; }
 
-/* team */
-.team { display: grid; grid-template-columns: 1fr 1.2fr; gap: 50px; align-items: start; }
-.team h2 { margin: 6px 0 0; font-size: clamp(40px, 6vw, 72px); font-weight: 600; line-height: 1.2; }
-.team p { color: var(--muted); margin: 0 0 0; }
-.team ul { list-style: none; margin: 0; padding: 0; }
-.team li { display: flex; justify-content: space-between; gap: 16px; padding: 18px 0; border-bottom: 1px solid var(--line); flex-wrap: wrap; }
-.team li span { color: var(--muted); font-size: 14px; }
-@media (max-width: 800px) { .team { grid-template-columns: 1fr; } }
+  .view:not([hidden]) .rise { animation: rise .9s cubic-bezier(.2,.7,.2,1) both; }
+  .view:not([hidden]) .rise.d1 { animation-delay: .12s; }
+  .view:not([hidden]) .rise.d2 { animation-delay: .24s; }
+  @keyframes rise { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
+  @media (prefers-reduced-motion: reduce) { .rise, .ticker-track { animation: none !important; } }
 
-footer { border-top: 1px solid var(--line); padding: 28px 0; text-align: center; color: var(--muted); font-size: 14px; }
-.empty { color: var(--muted); }
-
-@media (max-width: 600px) {
-  section { padding: 80px 0; }
-  .menu a { font-size: 13px; padding: 5px 9px; }
-  .logo { font-size: 20px; }
-}
-@media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; scroll-behavior: auto !important; } }
+  @media (max-width: 860px) {
+    header { flex-direction: column; gap: 12px; }
+    nav { justify-content: center; gap: 18px; }
+    .featured, .about, .contact { grid-template-columns: 1fr; }
+    .stats { grid-template-columns: 1fr 1fr; }
+    .stats div:nth-child(2) { border-right: 0; }
+    .stats div:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+    .idx-row { grid-template-columns: 1fr; gap: 10px; }
+    .shots { grid-template-columns: 1fr; }
+    .about .cols { grid-template-columns: 1fr; }
+    .about .cols div:nth-child(n) { padding: 22px 0; border-right: 0; }
+    .page { padding-top: 170px; }
+  }
 </style>
 </head>
 <body>
 
-<header class="bar">
-  <div class="wrap">
-    <a class="logo" href="#top">مفضال</a>
-    <nav class="menu" id="menu">
-      <a href="#top">خانه</a>
-      <a href="#songs">سرودها</a>
-      <a href="#popular">پرطرفدار</a>
-      <a href="#video">نماهنگ</a>
-      <a href="#gallery">گزارش تصویری</a>
-      <a href="#contact">هماهنگی</a>
-      <a href="#team">گروه مفضال</a>
-    </nav>
-  </div>
+<header id="top">
+  <a class="brand" href="#home"><span class="logo">THE ZEROX</span><small>Game Studios</small></a>
+  <nav>
+    <a href="#home" data-v="home"><sup>01</sup>Home</a>
+    <a href="#services" data-v="services"><sup>02</sup>Services</a>
+    <a href="#games" data-v="games"><sup>03</sup>Games</a>
+    <a href="#about" data-v="about"><sup>04</sup>About</a>
+    <a href="#contact" data-v="contact"><sup>05</sup>Contact</a>
+  </nav>
 </header>
 
-<main id="top">
-  <div class="hero">
-    <div class="wrap" style="position:relative">
-      <p class="kicker">گروه سرود · بیرجند</p>
-      <h1>مفضال<span>.</span></h1>
-      <p class="lead">سرودهایی برای قصه ایران، رهبر شهید، و هر لحظه‌ای که صدایش باید به گوش برسد.</p>
-      <div class="cta">
-        <a class="btn solid" href="#songs">شنیدن سرودها</a>
-        <a class="btn" href="#video">تماشای نماهنگ</a>
+<main>
+
+<!-- HOME -->
+<div class="view" id="home">
+  <section class="hero">
+    <div class="meta rise"><span>Independent game studio</span><span>Atmospheric worlds</span></div>
+    <h1 class="rise d1"><span class="a">ZEROX</span><span class="b">GAME STUDIOS</span></h1>
+    <div class="hero-foot rise d2">
+      <p class="lead" style="max-width:420px;">We build dark, atmospheric games from the wires up. Every world is hand-crafted, every line drawn with intent.</p>
+      <div class="btns">
+        <a href="#games" class="btn solid">Our Games <span>→</span></a>
+        <a href="#contact" class="btn">Work With Us <span>→</span></a>
       </div>
     </div>
-    <div class="ticker" aria-hidden="true"><span>قصه ایران ♪ رهبر شهید ♪ نماهنگ قصه ایران ♪ گزارش تصویری ♪ گروه سرود مفضال ♪ قصه ایران ♪ رهبر شهید ♪ نماهنگ قصه ایران ♪ گزارش تصویری ♪ گروه سرود مفضال ♪</span></div>
+  </section>
+
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-track">
+      <span>Game Design</span><span>Art &amp; Illustration</span><span>Development</span><span>Sound &amp; Music</span><span>SilentGears</span>
+      <span>Game Design</span><span>Art &amp; Illustration</span><span>Development</span><span>Sound &amp; Music</span><span>SilentGears</span>
+    </div>
   </div>
 
-  <section id="songs">
-    <div class="wrap">
-      <div class="sec-top">
-        <div><span class="idx">۰۱</span><h2>سرودها</h2></div>
-        <p>ژانر مورد نظرتان را انتخاب کنید</p>
-      </div>
-      <div class="chips" id="chips"></div>
-      <div class="grid" id="songs-grid"></div>
-    </div>
-  </section>
-
-  <section id="popular">
-    <div class="wrap">
-      <div class="sec-top">
-        <div><span class="idx">۰۲</span><h2>پرطرفدار</h2></div>
-        <p>سرودهای برگزیده مخاطبان</p>
-      </div>
-      <div class="popular-list" id="popular-list"></div>
-    </div>
-  </section>
-
-  <section id="video">
-    <div class="wrap">
-      <div class="sec-top">
-        <div><span class="idx">۰۳</span><h2>نماهنگ</h2></div>
-      </div>
-      <div id="video-box"></div>
-    </div>
-  </section>
-
-  <section id="gallery">
-    <div class="wrap">
-      <div class="sec-top">
-        <div><span class="idx">۰۴</span><h2>گزارش تصویری</h2></div>
-      </div>
-      <div id="gallery-box"></div>
-    </div>
-  </section>
-
-  <section id="contact">
-    <div class="wrap">
-      <div class="sec-top">
-        <div><span class="idx">۰۵</span><h2>هماهنگی</h2></div>
-        <p>برای اجرا و همکاری با ما در ارتباط باشید</p>
-      </div>
-      <div class="contact">
-        <a href="tel:09965955856"><small>شماره هماهنگی</small><strong>۰۹۹۶۵۹۵۵۸۵۶</strong></a>
-        <a href="tel:09965955856"><small>شماره تماس</small><strong>۰۹۹۶۵۹۵۵۸۵۶</strong></a>
-        <a href="mailto:hamahangi@mefzal.ir"><small>ایمیل</small><strong>hamahangi@mefzal.ir</strong></a>
-        <a href="https://instagram.com/mefzal_group_official" target="_blank" rel="noopener"><small>اینستاگرام</small><strong>mefzal_group_official</strong></a>
-      </div>
-    </div>
-  </section>
-
-  <section id="team">
-    <div class="wrap team">
+  <section class="section">
+    <div class="featured">
+      <img src="https://cdn.imgurl.ir/uploads/k51183_Negar_1788164380627.jpg" alt="SilentGears cover" loading="lazy">
       <div>
-        <span class="idx" style="color:var(--pista);font-size:14px">۰۶</span>
-        <h2>گروه مفضال</h2>
-        <p style="margin-top:12px">صدایی از دل بیرجند؛ با عشق به ایران و ارادتی به خاندان ولایت.</p>
+        <p class="label">Featured project</p>
+        <h2 class="title" style="font-size:clamp(3.4rem,9vw,7rem);margin-bottom:26px;">Silent<br>Gears</h2>
+        <p class="lead" style="margin-bottom:40px;">Our featured project. Step into the tangle of wires and find your way through the dark.</p>
+        <a href="#games" class="btn">View the game <span>→</span></a>
       </div>
-      <ul>
-        <li><span>مدیر مجموعه</span><b style="font-weight:600">ابوالفضل حیدری</b></li>
-        <li><span>امور ضبط و آموزگار سرود</span><b style="font-weight:600">مهدی اکبری | حمیدرضا نخعی</b></li>
-        <li><span>سازنده سایت</span><b style="font-weight:600">محمد حسین صنعتی</b></li>
-      </ul>
     </div>
   </section>
+
+  <section class="stats" style="margin:0 0 0;">
+    <div><b>3</b><span>Projects in progress</span></div>
+    <div><b>100%</b><span>Original art</span></div>
+    <div><b>4</b><span>Disciplines in house</span></div>
+    <div><b>1</b><span>Shared vision</span></div>
+  </section>
+</div>
+
+<!-- SERVICES -->
+<div class="view" id="services" hidden>
+  <section class="page">
+    <p class="label rise">Capabilities</p>
+    <h1 class="title rise d1">What we do</h1>
+    <p class="lead rise d2" style="margin:24px 0 70px;">From concept art to launch day, we handle the full pipeline of an indie game.</p>
+    <div class="idx rise d2">
+      <div class="idx-row"><span class="n">01</span><h3>Game Design</h3><p>Core loops, level flow, and narrative systems built around mood and atmosphere.</p></div>
+      <div class="idx-row"><span class="n">02</span><h3>Art &amp; Illustration</h3><p>Hand-drawn environments and line art with a distinct, tangled, unsettling style.</p></div>
+      <div class="idx-row"><span class="n">03</span><h3>Development</h3><p>Playable prototypes and full releases for PC, web, and mobile.</p></div>
+      <div class="idx-row"><span class="n">04</span><h3>Sound &amp; Music</h3><p>Ambient scores and sound design that hum beneath every scene.</p></div>
+    </div>
+  </section>
+</div>
+
+<!-- GAMES -->
+<div class="view" id="games" hidden>
+  <section class="page">
+    <p class="label rise">Selected work</p>
+    <h1 class="title rise d1" style="margin-bottom:50px;">Games</h1>
+    <div class="hero-game rise d1">
+      <img src="https://cdn.imgurl.ir/uploads/k51183_Negar_1788164380627.jpg" alt="SilentGears cover" loading="lazy">
+      <div class="over">
+        <span class="tag">Featured</span>
+        <h2>SilentGears</h2>
+      </div>
+    </div>
+    <div class="shots rise d2">
+      <figure><img src="https://cdn.imgurl.ir/uploads/z306107_Negar_1788157838729.jpg" alt="SilentGears screenshot 1" loading="lazy"><figcaption>Screen 01</figcaption></figure>
+      <figure><img src="https://cdn.imgurl.ir/uploads/l79706_Negar_1788163302729.jpg" alt="SilentGears screenshot 2" loading="lazy"><figcaption>Screen 02</figcaption></figure>
+    </div>
+    <p class="label">Upcoming</p>
+    <div class="list">
+      <div><h4>Right Now</h4><span class="tag">Coming soon</span></div>
+      <div><h4>Untangled</h4><span class="tag">In development</span></div>
+      <div><h4>Signal Loss</h4><span class="tag">Concept</span></div>
+    </div>
+  </section>
+</div>
+
+<!-- ABOUT -->
+<div class="view" id="about" hidden>
+  <section class="page">
+    <div class="about">
+      <div class="rise">
+        <img src="https://cdn.imgurl.ir/uploads/y39152_Negar_1791034551022.jpg" alt="Studio creator" loading="lazy">
+      </div>
+      <div class="rise d1">
+        <p class="label">About the studio</p>
+        <h1 class="title" style="margin-bottom:30px;">Built in<br>the dark</h1>
+        <p class="body">The Zerox Game Studios is an independent team focused on telling stories through mood, texture, and silence. We believe the best games feel like a place you have to find your way through.</p>
+        <p class="body">We design, illustrate, and build everything in-house, so every cable, every shadow, and every sound stays true to the vision.</p>
+        <div class="cols">
+          <div><b>3</b><span>Projects in progress</span></div>
+          <div><b>100%</b><span>Original art</span></div>
+          <div><b>4</b><span>Disciplines in house</span></div>
+          <div><b>1</b><span>Shared vision</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- CONTACT -->
+<div class="view" id="contact" hidden>
+  <section class="page">
+    <div class="contact">
+      <div class="rise">
+        <p class="label">Contact</p>
+        <h1 class="title" style="margin-bottom:26px;">Let's talk</h1>
+        <p class="lead" style="margin-bottom:50px;">Interested in collaborating, publishing, or just saying hello? Send us a message.</p>
+        <div class="links">
+          <a href="https://t.me/ZEROX_GAME_STUDIOS" target="_blank" rel="noopener">Telegram <span>→</span></a>
+          <a href="https://www.youtube.com/@Zerox_game_studios" target="_blank" rel="noopener">YouTube <span>→</span></a>
+          <a href="https://www.instagram.com/zerox_game_studios" target="_blank" rel="noopener">Instagram <span>→</span></a>
+        </div>
+      </div>
+      <form class="rise d1" onsubmit="event.preventDefault(); this.querySelector('button').textContent='Sent. Thank you!';">
+        <input type="text" placeholder="Your name" required>
+        <input type="email" placeholder="Your email" required>
+        <textarea placeholder="Your message" required></textarea>
+        <button class="btn solid" type="submit">Send message <span>→</span></button>
+      </form>
+    </div>
+  </section>
+</div>
+
 </main>
 
-<footer>گروه سرود مفضال · بیرجند · ۱۴۰۵</footer>
-
-<dialog class="lb" id="lb">
-  <img id="lb-img" alt="">
-  <button class="x" id="lb-close" aria-label="بستن">✕</button>
-</dialog>
+<footer>
+  <div class="socials">
+    <a href="https://t.me/ZEROX_GAME_STUDIOS" target="_blank" rel="noopener">Telegram</a>
+    <a href="https://www.youtube.com/@Zerox_game_studios" target="_blank" rel="noopener">YouTube</a>
+    <a href="https://www.instagram.com/zerox_game_studios" target="_blank" rel="noopener">Instagram</a>
+  </div>
+  <a href="#top">Back to top ↑</a>
+  <p class="small">Website by <a href="https://www.youtube.com/@mohamad_hossein_ev18" target="_blank" rel="noopener">mohamad hossein ev18</a> &middot; <a href="https://www.instagram.com/mohamad_hossein_ev18" target="_blank" rel="noopener">Instagram</a> &middot; <a href="https://t.me/MOHAMAD_HOSSEIN_EV188" target="_blank" rel="noopener">Telegram</a> &middot; &copy; 2026 The Zerox Game Studios</p>
+</footer>
 
 <script>
-const songs = [
-  {
-    title: "قــصــه ایــران!",
-    image: "https://cdn.imgurl.ir/uploads/k79772_IMG__.jpg",
-    audio: "https://uploadkon.ir/uploads/ef0412_26GHSEH-IRAN-MEFZAL-IR.mp3",
-    genre: "حماسی",
-    tag: "پرطرفدار",
-    credits: [["اجرا", "گروه سرود مفضال"], ["شعر", "مهدی استخر | احمد غدیریان"], ["ضبط", "مهدی اکبری"], ["تنظیم", "احمد غدیریان"], ["میکس و مسترینگ", "احمد غدیریان"]],
-    note: "با تشکر از سازمان فرهنگی، ورزشی، اجتماعی شهرداری بیرجند و ناحیه مقاومت بسیج دانشجویی استان خراسان جنوبی"
-  },
-  {
-    title: "رهبر شهید",
-    image: "https://uploadkon.ir/uploads/020f15_26rahbar-sahid-12322.jpg",
-    audio: "https://uploadkon.ir/uploads/65b715_26367-94388406467273-1-1.mp3",
-    genre: "شهادتی",
-    tag: "",
-    credits: [["اجرا", "گروه سرود مفضال"], ["شعر", "عرفان ابوالحسنی"], ["ضبط", "علی عاملی نیا (استودیو مصباح)"], ["تنظیم", "عرفان یامولایی | احسان یامولایی"], ["میکس و مسترینگ", "علی عاملی نیا (استودیو مصباح)"], ["طراح کاور", "محمد حسین صنعتی"]],
-    note: "ملودی: حسین رضائیان"
+  const views = ['home', 'services', 'games', 'about', 'contact'];
+  const titles = { home: 'Home', services: 'Services', games: 'Games', about: 'About', contact: 'Contact' };
+  function show() {
+    const name = location.hash.slice(1);
+    const current = views.includes(name) ? name : 'home';
+    document.querySelectorAll('.view').forEach(v => { v.hidden = v.id !== current; });
+    document.querySelectorAll('nav a').forEach(a => a.classList.toggle('active', a.dataset.v === current));
+    document.title = titles[current] + ' | The Zerox Game Studios';
+    window.scrollTo({ top: 0, behavior: 'instant' });
   }
-];
-
-const video = {
-  title: "نماهنگ قصه ایران",
-  poster: "https://cdn.imgurl.ir/uploads/k79772_IMG__.jpg",
-  src: "https://cdn.imgurl.ir/uploads/a632_VID_20260822_011900_726.mp4",
-  credits: [["اجرا", "گروه سرود مفضال بیرجند"], ["شعر", "مهدی استخر"], ["ملودی", "احمد غدیریان"], ["تنظیم", "احمد غدیریان"], ["ضبط", "مهدی اکبری"], ["تدوین", "موسسه سینمایی مهربان‌فیلم"]]
-};
-
-const gallery = [
-  {
-    title: "#گزارش_تصویری",
-    location: "میدان اجتماعات شهید رئیسی",
-    desc: "اجرای گروه سرود مفضال در صد و شصت و ششمین شب اجتماعات بیرجند",
-    images: [
-      "https://uploadkon.ir/uploads/ec4b25_26IMG-20260825-041446-253.jpg",
-      "https://uploadkon.ir/uploads/36f525_26IMG-20260825-041442-705.jpg"
-    ]
-  }
-];
-
-const genres = ["همه", "شهادتی", "ولادتی", "حماسی", "احساسی", "مناسبتی"];
-const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
-
-function songCard(s) {
-  const credits = s.credits.map(([k, v]) => `<li><b>${esc(k)}:</b>${esc(v)}</li>`).join("");
-  return `<article class="card">
-    <div class="cover">
-      <img src="${esc(s.image)}" alt="${esc(s.title)}" loading="lazy">
-      ${s.tag ? `<span class="pill">${esc(s.tag)}</span>` : ""}
-      <span class="cat">${esc(s.genre)}</span>
-    </div>
-    <div class="body">
-      <h3>${esc(s.title)}</h3>
-      <audio controls preload="none" src="${esc(s.audio)}"></audio>
-      <ul class="credits">${credits}</ul>
-      <p class="note">${esc(s.note)}</p>
-    </div>
-  </article>`;
-}
-
-function renderSongs(g = "همه") {
-  const list = songs.filter(s => g === "همه" || s.genre === g);
-  document.getElementById("songs-grid").innerHTML = list.map(songCard).join("") || `<p class="empty">سرودی در این ژانر نیست.</p>`;
-  document.querySelectorAll(".chip").forEach(c => c.classList.toggle("on", c.dataset.g === g));
-}
-
-document.getElementById("chips").innerHTML = genres.map(g => `<button class="chip${g === "همه" ? " on" : ""}" data-g="${esc(g)}">${esc(g)}</button>`).join("");
-document.getElementById("chips").addEventListener("click", e => {
-  const b = e.target.closest(".chip"); if (b) renderSongs(b.dataset.g);
-});
-
-document.getElementById("popular-list").innerHTML = songs.filter(s => s.tag).map((s, i) => `
-  <div class="p-row">
-    <div class="num">${String(i + 1).padStart(2, "۰")}</div>
-    <div>
-      <h3>${esc(s.title)}</h3>
-      <p class="sm">${esc(s.genre)} · ${esc(s.tag)}</p>
-    </div>
-    <audio controls preload="none" src="${esc(s.audio)}"></audio>
-  </div>`).join("") || `<p class="empty">به زودی…</p>`;
-
-document.getElementById("video-box").innerHTML = `
-  <div class="video-box">
-    <video controls preload="metadata" poster="${esc(video.poster)}" src="${esc(video.src)}"></video>
-    <div>
-      <h3>${esc(video.title)}</h3>
-      <ul class="credits">${video.credits.map(([k, v]) => `<li><b>${esc(k)}:</b>${esc(v)}</li>`).join("")}</ul>
-    </div>
-  </div>`;
-
-document.getElementById("gallery-box").innerHTML = gallery.map(p => `
-  <div class="post-head">
-    <div><h3>${esc(p.title)}</h3><p>${esc(p.location)}</p></div>
-    <p style="max-width:460px">${esc(p.desc)}</p>
-  </div>
-  <div class="shots">
-    ${p.images.map(src => `<button class="shot" data-src="${esc(src)}" aria-label="بزرگ‌نمایی"><img src="${esc(src)}" alt="${esc(p.title)}" loading="lazy"></button>`).join("")}
-  </div>`).join("");
-
-const lb = document.getElementById("lb");
-document.addEventListener("click", e => {
-  const s = e.target.closest(".shot");
-  if (s) { document.getElementById("lb-img").src = s.dataset.src; lb.showModal(); }
-});
-document.getElementById("lb-close").onclick = () => lb.close();
-lb.addEventListener("click", e => { if (e.target === lb) lb.close(); });
-
-document.addEventListener("play", e => {
-  document.querySelectorAll("audio, video").forEach(m => { if (m !== e.target) m.pause(); });
-}, true);
-
-const links = [...document.querySelectorAll("#menu a")];
-const obs = new IntersectionObserver(entries => {
-  entries.forEach(en => {
-    if (en.isIntersecting) links.forEach(a => a.classList.toggle("on", a.getAttribute("href") === "#" + en.target.id));
-  });
-}, { rootMargin: "-45% 0px -50% 0px" });
-["songs", "popular", "video", "gallery", "contact", "team"].forEach(id => obs.observe(document.getElementById(id)));
+  addEventListener('hashchange', show);
+  addEventListener('scroll', () => document.getElementById('top').classList.toggle('scrolled', scrollY > 40), { passive: true });
+  show();
 </script>
 </body>
 </html>
